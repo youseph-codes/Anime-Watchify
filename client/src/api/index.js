@@ -4,6 +4,8 @@ const api = axios.create({
     baseURL: 'http://localhost:3000/api',
 })
 
+
+// Join server with client
 export const insertAnime = payload => api.post('/anime', payload)
 export const getAllAnime = () => api.get('/anime')
 export const updateAnimeById = (id, payload) => api.put('/anime/${id}', payload)
