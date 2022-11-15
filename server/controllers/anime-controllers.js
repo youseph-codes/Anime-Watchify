@@ -81,11 +81,24 @@ deleteAnime = async (req, res) => {
     }
 
     if (!anime) {
-      return res.status(404).json({ success: false, error: `Anime not found` });
+      return res.status(404).json({ success: false, error: `Anime not found!` });
     }
 
     return res.status(200).json({ success: true, data: anime });
   }).catch((err) => console.log(err));
 };
 
-module.exports = { createAnime, updateAnime, deleteAnime };
+// Get all animes
+getAnimes = async (req, res) => {
+  await Anime.find({}, (err, animes) => {
+    if (err) {
+      return res.status(400).json({ success: false, error: err });
+    }
+    if (!animes.length) {
+      return res.status(404).json({ success: false, error: `Anime not found!` });
+    }
+    return res.status(200).json({ success: true, data: animes });
+  }).catch((err) => console.log(err));
+};
+
+module.exports = { createAnime, updateAnime, deleteAnime, getAnimes };
