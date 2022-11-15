@@ -1,5 +1,34 @@
 const Anime = require("../models/anime-model");
 
+// Get all animes
+getAnimes = async (req, res) => {
+  await Anime.find({}, (err, animes) => {
+    if (err) {
+      return res.status(400).json({ success: false, error: err });
+    }
+    if (!animes.length) {
+      return res
+        .status(404)
+        .json({ success: false, error: `Anime not found!` });
+    }
+    return res.status(200).json({ success: true, data: animes });
+  }).catch((err) => console.log(err));
+};
+
+// Get anime by id
+getAnimeById = async (req, res) => {
+  await Anime.findOne({ _id: req.params.id }, (err, anime) => {
+    if (err) {
+      return res.status(400).json({ success: false, error: err });
+    }
+
+    if (!anime) {
+      return res.status(404).json({ success: false, error: `Anime not found` });
+    }
+    return res.status(200).json({ success: true, data: anime });
+  }).catch((err) => console.log(err));
+};
+
 // Create anime
 createAnime = (req, res) => {
   const body = req.body;
@@ -81,24 +110,19 @@ deleteAnime = async (req, res) => {
     }
 
     if (!anime) {
-      return res.status(404).json({ success: false, error: `Anime not found!` });
+      return res
+        .status(404)
+        .json({ success: false, error: `Anime not found!` });
     }
 
     return res.status(200).json({ success: true, data: anime });
   }).catch((err) => console.log(err));
 };
 
-// Get all animes
-getAnimes = async (req, res) => {
-  await Anime.find({}, (err, animes) => {
-    if (err) {
-      return res.status(400).json({ success: false, error: err });
-    }
-    if (!animes.length) {
-      return res.status(404).json({ success: false, error: `Anime not found!` });
-    }
-    return res.status(200).json({ success: true, data: animes });
-  }).catch((err) => console.log(err));
+module.exports = {
+  getAnimes,
+  getAnimeById,
+  createAnime,
+  updateAnime,
+  deleteAnime,
 };
-
-module.exports = { createAnime, updateAnime, deleteAnime, getAnimes };
