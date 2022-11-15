@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const db = require('./db')
+const animeRouter = require('./routes/anime-router')
 
 const app = express()
 const apiPort = 3001
@@ -17,6 +18,6 @@ app.get('/', (req, res) => {
     res.send('We are live!')
 })
 
-// app.use('/api', router)
+app.use('/routes', animeRouter)
 
 app.listen(apiPort, () => console.log(`Running on port ${apiPort}`))
