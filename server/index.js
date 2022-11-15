@@ -17,4 +17,6 @@ app.get('/', (req, res) => {
     res.send('We are live!')
 })
 
+// app.use('/api', router)
+
 app.listen(apiPort, () => console.log(`Running on port ${apiPort}`))
