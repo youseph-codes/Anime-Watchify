@@ -12,9 +12,18 @@ function App() {
             <NavBar />
             <Routes>
                 {/* Adding routes */}
-                <Route path="/anime/list" exact component={AnimeList} />
-                <Route path="/anime/create" exact component={AnimeInsert} />
-                <Route path="anime/update/:id" exact component={AnimeUpdate} />
+                <Route
+                    path="/anime/list" 
+                    element={<AnimeList />} 
+                />
+                <Route
+                    path="/anime/create"
+                    element={<AnimeInsert />} 
+                />
+                <Route 
+                    path="anime/update/:id" 
+                    element={<AnimeUpdate />} 
+                />
             </Routes>
         </Router>
     )

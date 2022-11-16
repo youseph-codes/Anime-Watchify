@@ -1,7 +1,7 @@
-import AnimeInsert from "./AnimeInsert";
-import AnimeList from "./AnimeList";
-import AnimeUpdate from "./AnimeUpdate";
+import AnimeList from './AnimeList';
+import AnimeInsert from './AnimeInsert';
+import AnimeUpdate from './AnimeUpdate';
 
 
 
-export{AnimeInsert, AnimeList, AnimeUpdate};
+export{AnimeList, AnimeInsert, AnimeUpdate};
