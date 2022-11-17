@@ -14,15 +14,15 @@ function App() {
                 {/* Adding routes */}
                 <Route
                     path="/anime/list" 
-                    element={<AnimeList />} 
+                    exact component={<AnimeList />} 
                 />
                 <Route
                     path="/anime/create"
-                    element={<AnimeInsert />} 
+                    exact component={<AnimeInsert />} 
                 />
                 <Route 
                     path="anime/update/:id" 
-                    element={<AnimeUpdate />} 
+                    exact component={<AnimeUpdate />} 
                 />
             </Routes>
         </Router>

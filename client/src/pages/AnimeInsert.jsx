@@ -1,5 +1,4 @@
-import React, { Component} from 'react';
-
+import React, { Component } from 'react'
 
 class AnimeInsert extends Component {
     render() {
@@ -11,4 +10,4 @@ class AnimeInsert extends Component {
     }
 }
 
-export default AnimeInsert;
+export default AnimeInsert
