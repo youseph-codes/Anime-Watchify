@@ -1,0 +1,23 @@
+{
+  "name": "anime-watchify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "install": "cd server && npm i && cd ,,/client && npm i",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youseph-codes/Anime-Watchify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youseph-codes/Anime-Watchify/issues"
+  },
+  "homepage": "https://github.com/youseph-codes/Anime-Watchify#readme"
+}
