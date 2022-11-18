@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-
-const app = express()
-app
-=======
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -30,4 +21,3 @@ app.get('/', (req, res) => {
 app.use('/api', animeRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
->>>>>>> 7f973b4ff5a74d9cdca8e1418f7b277c48fd71c3
